@@ -1,5 +1,9 @@
 export default {
-  mini: {},
+  terser: {
+    enable: false,
+  },
+  mini: {
+  },
   h5: {
     /**
      * WebpackChain 插件配置

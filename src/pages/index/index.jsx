@@ -1,16 +1,18 @@
 import { View, Text } from '@tarojs/components'
-import { useLoad } from '@tarojs/taro'
-import './index.scss'
+import { useState } from 'react'
 
 export default function Index() {
-
-  useLoad(() => {
-    console.log('Page loaded.')
-  })
+  const [flag, setFlag] = useState(true)
 
   return (
     <View className='index'>
-      <Text>Hello world!</Text>
+      <View className='wrapper'>
+        {
+          flag ?
+            <Text className='box' onClick={() => setFlag(prev => !prev)}>Demo {flag ? '1' : '0'}</Text> :
+            <Text className='box'>Other {flag ? '1' : '0'}</Text>
+        }
+      </View>
     </View>
   )
 }
